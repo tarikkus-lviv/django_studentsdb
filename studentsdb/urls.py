@@ -21,7 +21,7 @@ from students import views
 
 urlpatterns = [
     #Student urls
-    path('', views.students_list, name='home'),
+    path('students', views.students_list, name='home'),
     path('students/add/', views.students_add, name='students_add'),
     path('students/<int:sid>/edit/', views.students_edit, name='students_edit'),
     path('students/<int:sid>/delete/', views.students_delete, name='students_delete'),
