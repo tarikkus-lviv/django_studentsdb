@@ -4,7 +4,6 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 # Views for students
-
 def students_list(request):
     students =(
         {'id':1,
@@ -48,3 +47,8 @@ def groups_edit(request, gid):
 
 def groups_delete(request, gid):
     return HttpResponse('<h1>Delete Group %s</h1>' % gid)
+
+
+# Views for jornals
+def journals_list(request):
+    return render(request, 'students/journals_list.html')

@@ -10,6 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 import os
+from django.conf import settings
+from .context_processors import students_proc
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -62,6 +64,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # 'studentsdb.context_processors.students_proc',
             ],
         },
     },
@@ -120,4 +123,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-PORTAL_URL = 'http://127.0.0.1:8000/'
+# PORTAL_URL = 'http://127.0.0.1:8000/'
+PORTAL_URL = 'request.get_full_path()'
